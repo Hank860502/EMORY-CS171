@@ -1,30 +1,47 @@
-      /*
+/*
 
-      THIS CODE IS MY OWN WORK, IT WAS WRITTEN WITHOUT CONSULTING
+THIS CODE IS MY OWN WORK, IT WAS WRITTEN WITHOUT CONSULTING
 
-      CODE WRITTEN BY OTHER STUDENTS. Han-Yu Chen
+CODE WRITTEN BY OTHER STUDENTS. Han-Yu Chen
 
-      */
+*/
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class GuessingGame {
-
+	 private static Scanner scanner = new Scanner( System.in );
 	// fill in code here
 	// define data members
+	ArrayList<String> al= new ArrayList<String>();
+	private int count;
+
+	Random rand = new Random();
+	int firstGuess = rand.nextInt(9999) + 1000;
+	// get a random number between 1000 to 9999
 
 	public GuessingGame ( ) {
 		// fill in code here
 		// initialization
 
+
 	}
 
 	public int myGuessIs() {
 		// fill in code here
+		if(this.count == 0){
+			return firstGuess;
+		} else if(al.size()==0){
+			return -1;
+		} else{
+			return al.get(rand.nextInt(al.size()));
+			// getting a random number from the remain arraylist as the next guess
+		}
 	}
 	
 	public int totalNumGuesses() {
+		this.count += 1;
 		// fill in code here
 		// this should return the total number of guesses taken
 	}
