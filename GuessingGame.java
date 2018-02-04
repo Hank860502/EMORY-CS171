@@ -17,6 +17,7 @@ public class GuessingGame {
 	private int count;
 	private ArrayList<Integer> al;
 	private ArrayList<Integer> store;
+	private ArrayList<Integer> lastSet;
 	private boolean foundAllNumbers;
 
 	public GuessingGame ( ) {
@@ -37,7 +38,7 @@ public class GuessingGame {
 	  al.add(9999);
 
 		this.store = new ArrayList<Integer>(); // store all the matching nums
-
+		this.lastSet = new ArrayList<Integer>(); // store all the possible combination using the 4 number
 	}
 
 	public int myGuessIs() {
@@ -50,12 +51,11 @@ public class GuessingGame {
 		} else if(this.store.size() == 4){
 			this.foundAllNumbers = true;
 			// list out all the possible numbers that contains these four numbers but 0 could not be the first digit
-			int test = 0;
-			while (store.size() > test) {
-	 			System.out.println(store.get(test));
-         test++;
+      for(int i=1000; i<9999; i++){
+      	if()
       }
-      return 0;
+      }
+      return ;
       // 現在有四個一定存在的數了，先用猜的
 
 
@@ -84,7 +84,6 @@ public class GuessingGame {
 		// update the guess based on the number of matching digits claimed by the user
 		if (this.foundAllNumbers == false) {
 			if (this.al.size() == 1){
-				System.out.print("HERERERERE");
 				for (int i = (4-store.size()); i>0; i--) {
 					this.store.add(0); // if run through the 9 pairs of numbers and still couldn't get which 4 numbers is in size, fill in the remain spot with 0
 				} 
