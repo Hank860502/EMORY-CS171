@@ -35,6 +35,7 @@ public class GuessingGame {
 	  al.add(7777);
 	  al.add(8888);
 	  al.add(9999);
+
 		this.store = new ArrayList<Integer>(); // store all the matching nums
 
 	}
@@ -44,7 +45,9 @@ public class GuessingGame {
 		// return -1 if no valid guess
 		// return the next guess value
 		// add count 1 on the totalNumguess
-		if(this.store.size() == 4){
+		if (this.count == 0){
+			return this.al.get(0);
+		} else if(this.store.size() == 4){
 			this.foundAllNumbers = true;
 			// list out all the possible numbers that contains these four numbers but 0 could not be the first digit
 			int test = 0;
@@ -52,16 +55,21 @@ public class GuessingGame {
 	 			System.out.println(store.get(test));
          test++;
       }
-			this.count++;
-      return this.store.get(1);
-		} else if (this.count<4){
-			System.out.println("RANNNNN");
-			this.count++;
-			return this.al.get(0);
+      return 0;
+      // 現在有四個一定存在的數了，先用猜的
+
+
+
+
+
+
 		} else if (this.al.size()==0){ // BUUUGGGG
 			return -1;
-		}
-		return this.al.get(0);
+		} else if (this.count > 0 && this.count < 4){
+			return this.al.get(0);
+		} else {
+				return 878787;
+			}
 
 	}
 	
@@ -75,18 +83,21 @@ public class GuessingGame {
 		// fill in code here
 		// update the guess based on the number of matching digits claimed by the user
 		if (this.foundAllNumbers == false) {
-			if (nmatches == 0) {
-				this.al.remove(0); // if no number matches, delete that value from al and move on to next guess
-				myGuessIs();
-			} else if (this.al.size() == 0){
+			if (this.al.size() == 1){
+				System.out.print("HERERERERE");
 				for (int i = (4-store.size()); i>0; i--) {
-					this.store.add(0); // if run through the 9 pairs of numbers and still couldn't get which 4 numbers is in size, add the remain spot with 0
+					this.store.add(0); // if run through the 9 pairs of numbers and still couldn't get which 4 numbers is in size, fill in the remain spot with 0
 				} 
 				myGuessIs();
-			} else if (nmatches>0) {
+			} else if (nmatches == 0) {
+				this.al.remove(0); // if no number matches, delete that value from al and move on to next guess
+				myGuessIs();
+			} else if (nmatches > 0) {
 				for (int i=nmatches; i>0; i--) {
+					this.count++;
 					this.store.add(this.count);
-					System.out.println(this.store.size() + "sizeeee" + "Count is at " + this.count);
+					System.out.println("UPDATE!");
+					System.out.println(this.store.size() + " sizeeee. " + "Count is at " + this.count);
 				}
 				this.al.remove(0);
 				myGuessIs();
@@ -119,13 +130,13 @@ public class GuessingGame {
 		
 		do {
 			myguess = gamer.myGuessIs();
-			System.out.println("the count is at" + gamer.count);
 
 			if (myguess == -1) {
 				System.out.println("I don't think your number exists!");
 				System.exit(0);
 			}
 			System.out.println("I guess your number is " + myguess + ". How many digits did I guess correctly?");
+			System.out.println(gamer.al.size());
 			String userInput = scanner.nextLine();
 			
 			// quit if the user input nothing (such as pressed ESC)
@@ -148,6 +159,7 @@ public class GuessingGame {
 				break;
 			// update based on user input
 			gamer.updateMyGuess(numMatches);
+			System.out.print("hank's test");
 			
 		} while (true);
 		
