@@ -21,6 +21,7 @@ public class GuessingGame {
   public static int thousands(int a, int b){
    if(a / 1000 == b / 1000){
     return 1;
+    // if the thousand digit for our number vs user number is the same, return 1
    }
    return 0;
   }
