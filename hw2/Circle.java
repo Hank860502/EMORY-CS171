@@ -8,19 +8,21 @@ public class Circle {  // Save as "Circle.java"
    // It sets the radius and color to their default value.
    public Circle() {
       radius = 1.0;
-      
+      // color = "blue";
    }
    
    // 2nd constructor with given radius, but color default
    public Circle(double r) {
       radius = r;
-      
+      // color = "blue";
    }
    
    //You should complete this next constructor. "r" is the radius name, "ex" should be the x coordinate, and "why" should be the y coordinate. 
 
    public Circle(double r, double ex, double why){
-
+      radius = r;
+      x = ex;
+      y = why;
    	//your code here. 
    }
 
@@ -37,13 +39,16 @@ public class Circle {  // Save as "Circle.java"
    //A public method you need to write to compute the circumference of the circle.
 
    public double getCircumference(){
-
+      return radius*2*Math.PI;
    	//your code goes here. 
    }
    //A public method that compares the sizes of two circles. CircleA.isBiggerThan(CircleB) should return true if circleA has a larger area than circle B, false otherwise. 
    //The method is named, but you should fill in the signature. 
-   public boolean isBiggerThan(){
-
+   public boolean isBiggerThan(Circle second){
+      if (this.radius > second.radius){
+         reutrn true
+      }
+      return false
    	//Fill this code in. 
    }
    //A public method that takes as input an x coordinate (as a double) and a y coordinate (a double), and returns true if the (x,y) coordinate 
