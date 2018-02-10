@@ -1,0 +1,39 @@
+Instructions:
+
+Fill in the missing code for Circle.java
+
+Fill in the missing code for Rectangle.java
+
+In the file called HW2Example.java, write several methods of interest:
+
+1. isLarger takes as input two shapes (a Circle first, then a rectangle) and returns true if the area of the  circle is bigger than (or equal to) the area of the rectangle., false otherwise. 
+
+2. containsCenter takes as input two circles, and returns true if the first circle contains the center of the second circle. 
+
+3. isLonger write two isLonger methods, one which takes a circle then a rectangle, one which takes a rectangle then a circle. It returns the length of the perimeter of the longer of the two objects.
+
+4. isDeeper write two isDeeper methods, one which takes a circle then a  rectangle, and one which takes  a rectangle then a circle. Each method returns  the area of the larger of the two objects. 
+
+
+
+Finally, write a class which creates an object called Cylinder. It should extend the "Circle" object. The center of the circle will have an x coordinate, a y coordinate, and the z coordinate should be 0. It should also have a height, which is how tall the cylinder is in the z direction. There should be two constructors: one that takes no input and has the center of the base at (0.0,0.0,0.0), the radius of the base is 1 and the height is 1 and a second constructor that takes as input the x and y coordinates along with the radius and the height. It should override the getArea method which  which now  returns the volume of the cylinder, and should contain the methods getHeight (which outputs the height) and setHeight (which changes the height). 
+
+You should test your code using main methods that test all the methods from each of the classes  you have written in different ways. You should troubleshoot your code using inputs you know the answers to. Your code will be assessed by a main method that you don't have access to. Your methods should have all the names and signatures wrtitten in the descriptions, so that the main method that tests your code can call the functions correctly.   The "Circle" class has the most information filled in, followed by the "Rectangle" class. The "HW2Example" file only has method names, and it's up to you to write the "Cylinder" class. 
+
+
+
+To submit the homework, you will need to upload four files using the turnin program. You should make sure the files "Circle.java", "Rectangle.java", "HW2Example.java", and "Cylinder.java" are in your cs171 folder. Then, in a terminal you need to cd into your cs171 directory and run the turnin commands. Your terminal commands should look like this:
+
+
+
+
+
+>cd cs171
+>/home/cs171003/turnin Circle.java hw2a
+>/home/cs171003/turnin Rectangle.java hw2b
+>/home/cs171003/turnin HW2Example.java hw2c
+>/home/cs171003/turnin Cylinder.java hw2d
+
+
+
+
