@@ -46,16 +46,22 @@ public class Circle {  // Save as "Circle.java"
    //The method is named, but you should fill in the signature. 
    public boolean isBiggerThan(Circle second){
       if (this.radius > second.radius){
-         reutrn true
+         return true;
       }
-      return false
+      return false;
    	//Fill this code in. 
    }
    //A public method that takes as input an x coordinate (as a double) and a y coordinate (a double), and returns true if the (x,y) coordinate 
    //is inside the circle, and false otherwise. The method is named, but you should fill in the signature. 
 
-   public boolean containsPoint(){
+   public boolean containsPoint(double xPoint, double yPoint){
+      double xDistance = xPoint - this.x;
+      double yDistance = yPoint - this.y;
 
+      if (java.lang.Math.sqrt(xDistance * xDistance + yDistance * yDistance) > radius) {
+         return false;
+      }
+      return true;
    	//fill in this code. 
    }
 
