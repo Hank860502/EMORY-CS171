@@ -29,7 +29,7 @@ public class NQueens {
       }
       for(int j = temp; j < n; j++){ // number to fill
         for(int k = 0; k < i; k++){ // check safe or not
-          if(placable.get(k) == j || placable.get(k) - j == k - i || placable.get(k) - j == i - k){
+          if(placable.get(k) == j || placable.get(k) - j == k - i || placable.get(k) - j == i - k){ // if this row already taken or queens exist in diagnol
             if(j == n - 1){ // no element to put into stack
               temp = placable.pop() + 1; // record number in the previous row
               i = i - 2;  // rewrite previous row
